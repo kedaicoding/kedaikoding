@@ -4,4 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable,
   :confirmable, :lockable
+
+  has_many :forum_threads
+  has_many :forum_posts
+  has_many :replies_posts
+
 end

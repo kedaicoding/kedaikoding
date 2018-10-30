@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_043514) do
+ActiveRecord::Schema.define(version: 2018_10_30_165459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "forum_posts", force: :cascade do |t|
+    t.text "body"
+    t.integer "forum_thread_id"
+    t.integer "user_id"
+  end
+
+  create_table "forum_threads", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "tag"
+    t.integer "user_id"
+  end
+
+  create_table "replies_posts", force: :cascade do |t|
+    t.text "body"
+    t.integer "forum_post_id"
+    t.integer "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "full_name", limit: 50, default: "", null: false
