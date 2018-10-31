@@ -1,0 +1,66 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="form-group">
+        <%= f.label :full_name, 'Full Name' %>
+        <%= f.text_field :full_name, autofocus: true, autocomplete: 'full_name', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label     :gender , 'Gender' %>
+        <%= f.check_box :gender, {}, true %> <%= f.label :gender, "Female" %>
+        <%= f.check_box :gender, {}, false %> <%= f.label :gender, "Male" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :phone_number , 'Phone Number' %>
+        <%= f.text_field :phone_number, autofocus: true , class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email , 'Email' %>
+        <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :address , 'Address' %>
+        <%= f.text_area :address, autofocus: true, class: 'form-control', cols: 20, rows: 5 %>
+      </div>
+
+       <div class="form-group">
+        <%= f.label :role , 'Role' %>
+        <%= f.select :role, [["Front-End Engineer","Front-End Engineer"],
+        ["Back-End Engineer","Back-End Engineer"],["Project Manager","Project Manager"]
+        ],{}, {class: "form-control"} %>
+      </div>
+
+
+       <div class="form-group">
+        <%= f.label :role_in_team , 'Role in Team' %>
+        <%= f.select :role_in_team, [["Front-End Engineer","Front-End Engineer"],
+        ["Back-End Engineer","Back-End Engineer"],["Project Manager","Project Manager"]
+        ],{}, {class: "form-control"} %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
+
+        <% if @minimum_password_length %>
+          <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
+        <% end %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
+      </div>
+
+  <div class="form-group">
+    <%= f.submit "Sign up", class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
