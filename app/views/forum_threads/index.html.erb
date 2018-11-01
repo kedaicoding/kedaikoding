@@ -1,0 +1,15 @@
+<div class = "row">
+    <div class = "col-md-10">
+        <% @forum_threads.each do |ft| %>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"><%= ft.title %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= ft.tag %></h6>
+                    <%= link_to "View Post", forum_thread_path(ft) , class: 'card-link' %>
+                </div>
+            </div>
+        <% end %>
+        <br>
+        <%= link_to "Buat Thread baru", new_forum_thread_path , class: 'btn btn-primary' %>
+    </div>
+</div>
