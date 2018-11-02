@@ -184,6 +184,9 @@ li.nav-item{
 .top-50{
   margin-top:100px;
 }
+.top-35{
+  margin-top: 70px;
+}
 
 .left-sidebar-settings{
   overflow:scroll;
@@ -193,4 +196,18 @@ li.nav-item{
   .left-sidebar-settings{
     height:650px;
   }
+}
+
+// LANDING PAGE
+// CAROUSEL
+.carousel-caption{
+  left: 5%;
+  bottom: 15%;
+  right: 40%;
+  text-align: left;
+}
+.carousel-caption-right{
+  left: 40% !important;
+  right: 5%;
+  text-align: center;
 }
