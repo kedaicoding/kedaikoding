@@ -12,11 +12,10 @@
   <body>
 
     <%= render 'layouts/NavBar' %>
-
-    <div class="container">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
-    </div>
+    <%# Tolong kasih kondisi, 
+    supaya hanya muncul ketika ada kondisi. %>
+      <!--<p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>-->
+    <%= yield %>
   </body>
 </html>

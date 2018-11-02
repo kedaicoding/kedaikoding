@@ -8,6 +8,7 @@ gem 'figaro'
 gem 'devise'
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
+gem 'font-awesome-rails'
 gem 'summernote-rails', '~> 0.8.10.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

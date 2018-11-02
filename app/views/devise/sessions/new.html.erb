@@ -1,26 +1,59 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<section class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 bg-warning text-dark left-sidebar-settings">
+    <div class="col-md-12">
+  <%= image_tag("KEDAICODINGLOGO-01.png", :alt => "KedaiCoding Logo", class:"rounded mx-auto d-block top-50", style:"width:40%; height:40%") %>
     </div>
-  <% end -%>
+      <h5 class="font-weight-bold my-2"><%= t('.sign_in') %></h5>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="container px-5">
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="form-group form-check">
+            <%= f.check_box :remember_me, class: 'form-check-input' %>
+            <%= f.label :remember_me, class: 'form-check-label' do %>
+              <%= resource.class.human_attribute_name('remember_me') %>
+            <% end %>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.submit  "Sign in", class: 'btn btn-dark btn-block' %>
+        </div>
+      </div>
+      <% end %>
+      <div class="my-2">
+        <%= render 'devise/shared/links' %>
+      </div>
+      <div class="my-2 d-flex justify-content-center" style="font-size:18pt;">
+        <%= link_to raw('<i class="fa fa-twitter-square"></i>'), new_password_path(resource_name),class:'socmed mx-2' %>
+        <%= link_to raw('<i class="fa fa-facebook-square"></i>'), new_password_path(resource_name),class:'socmed mx-2' %>
+        <%= link_to raw('<i class="fa fa-instagram"></i>'), new_password_path(resource_name),class:'socmed mx-2' %>
+        <%= link_to raw('<i class="fa fa-youtube-square"></i>'), new_password_path(resource_name),class:'socmed mx-2' %>
+      </div>
+      <div class="d-flex justify-content-center">
+        <%= link_to 'Terms of Use', new_password_path(resource_name),class:'foot-link-color mx-2' %>
+        |
+        <%= link_to 'Help Center', new_password_path(resource_name),class:'foot-link-color mx-2' %>
+        |
+        <%= link_to 'Contact Us', new_password_path(resource_name),class:'foot-link-color mx-2' %>
+      </div>
+      <div class="d-flex justify-content-center">
+        KedaiCoding 2018 &copy; All Rights Reserved
+      </div>
+    </div>
+    <div class="col-md-8 bg-login-img">
+
+    </div>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</section>

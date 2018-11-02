@@ -1,3 +1,213 @@
 @import "bootstrap";
+@import "font-awesome";
 @import "summernote-bs4";
 @import "summernote-custom-theme.min";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+body{
+  font-family: 'Noto Sans', sans-serif;
+}
+.bg-warning{
+  background-color: white !important;
+}
+.text-warning{
+  color: #ff7417 !important;
+}
+a.text-warning{
+  color: #232323 !important;
+  text-decoration: none;
+}
+a.text-warning:hover{
+  color: #ff7417 !important;
+  text-decoration: none;
+}
+a{
+  color: white;
+}
+a:hover {
+  color: #ff7417 !important;
+  text-decoration: none;
+}
+a.foot-link-color{
+  color:#232323;
+}
+a.foot-link-color:hover{
+  color: #232323;
+}
+a.socmed{
+  color:#232323;
+}
+a.socmed:hover{
+  color: cornflowerblue;
+}
+.bg-login-img{
+    background-image: url("bg-login");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.h-100{
+  height: 100% !important;
+}
+.btn.btn-dark{
+  background-color: white;
+  color: black;
+}
+.btn.btn-dark:hover{
+  background-color: white;
+}
+
+
+// NAVIGATION BAR
+.navbar-icon-top .navbar-nav .nav-link > .fa {
+  position: relative;
+  width: 36px;
+  font-size: 24px;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+  font-size: 0.75rem;
+  position: absolute;
+  right: 0;
+  font-family: sans-serif;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa {
+  top: 3px;
+  line-height: 12px;
+}
+
+.navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+  top: -10px;
+}
+
+@media (min-width: 576px) {
+  .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+  }
+
+  .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa > .badge {
+    top: -7px;
+  }
+}
+li.nav-item{
+  list-style-type: none;
+  margin-left: 10px;
+}
+.dropdown-menu{
+  left: -45px;
+  border: 1px solid burlywood;
+  border-radius: 0rem;
+}
+.top-50{
+  margin-top:100px;
+}
+.top-35{
+  margin-top: 70px;
+}
+
+.left-sidebar-settings{
+  overflow:scroll;
+  height:650px;
+}
+@media (min-width:768px){
+  .left-sidebar-settings{
+    height:650px;
+  }
+}
+
+// LANDING PAGE
+// CAROUSEL
+.carousel-caption{
+  left: 5%;
+  bottom: 15%;
+  right: 40%;
+  text-align: left;
+}
+.carousel-caption-right{
+  left: 40% !important;
+  right: 5%;
+  text-align: center;
+}
