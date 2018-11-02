@@ -184,3 +184,13 @@ li.nav-item{
 .top-50{
   margin-top:100px;
 }
+
+.left-sidebar-settings{
+  overflow:scroll;
+  height:650px;
+}
+@media (min-width:768px){
+  .left-sidebar-settings{
+    height:650px;
+  }
+}
