@@ -4,9 +4,13 @@
 @import "summernote-custom-theme.min";
 
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+@import url('https://fonts.googleapis.com/css?family=Poppins:600');
 
 body{
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans', sans-serif !important;
+}
+h2{
+  font-family: 'Poppins', sans-serif;
 }
 .bg-warning{
   background-color: white !important;
@@ -211,3 +215,6 @@ li.nav-item{
   right: 5%;
   text-align: center;
 }
+
+// GET IN TOUCH
+

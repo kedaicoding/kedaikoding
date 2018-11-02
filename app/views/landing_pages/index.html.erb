@@ -39,10 +39,70 @@
     </div>
   </div>
 </section>
-<section class="get-in-touch">
-  <div class="container">
-    <div class="text-light">
-
+<section id="get-in-touch">
+  <div class="container bg-white py-5 text-dark">
+    <h2 class="font-weight-bold text-center">Contact Us</h2>
+    <form class="contact-form" data-toggle="validator" novalidate="true">
+    <div class="row">
+      <div class="col-md-8">
+      <h4>Get In Touch</h4>
+        <div class="row">
+          <div class="col-lg-4 col-md-12 col-xs-12">
+            <div class="form-group">
+              <i class="contact-icon fa fa-user"></i>
+              <input id="name" class="form-control" type="text" placeholder="Full Name" required data-error="Please Enter Your Name" />
+              <div class="help-block with-errors">
+                <ul class="list-unstyled">
+                  <li>Please Enter Your Name</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-xs-12">
+            <div class="form-group">
+              <i class="contact-icon fa fa-envelope-o"></i>
+              <input id="email" class="form-control" type="email" placeholder="Email" required data-error="Please Enter Your E-mail" />
+              <div class="help-block with-errors">
+                <ul class="list-unstyled">
+                  <li>Please Enter Your Email</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-xs-12">
+            <div class="form-group">
+              <i class="contact-icon fa fa-pencil-square-o"></i>
+              <input id="subject" class="form-control" type="text" placeholder="Subject" required data-error="Please Enter The Subject" />
+              <div class="help-block with-errors">
+                <ul class="list-unstyled">
+                  <li>Please Enter The Subject</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12 col-xs-12">
+            <textarea id="message" class="form-control" rows="4" placeholder="Message" required data-error="Please Enter Your Message"></textarea>
+              <div class="help-block with-errors">
+                <ul class="list-unstyled">
+                  <li>Please Enter Your Message</li>
+                </ul>
+              </div>
+            <button id="form-submit" class="btn btn-common btn-form-submit disabled"
+            type="submit" style="pointer-events: all; cursor: pointer;">Send Message</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+      <h4>Contact Information</h4>
+        <address><i class="fa fa-"></i>Jl. Asem Dua no. 22 Cipete <p>Jakarta Selatan</p> <p>12410</p></address>
+        <div class="tel-info">
+          <a class="text-dark" href="tel:+62217515870">Phone +62217515870</a>
+          <a class="text-dark" href="tel:+627691108">Fax +627691108</a>
+          <a class="text-dark" href="tel:+81286378693">WhatsApp +81286378693</a>
+        </div>
+        <a class="text-dark" href="mailto:info@kedaicoding.com">info@kedaicoding.com</a>
+      </div>
+    </form>
     </div>
   </div>
 </section>

@@ -27,7 +27,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
           <i class="fa fa-user">
           </i>
-          Sign In
+          <%= user_signed_in? ? current_user.full_name : 'Sign In' %>
         </a>
         <div class="dropdown-menu"> 
           <% if user_signed_in? %>

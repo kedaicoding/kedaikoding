@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Kedaikoding</title>
+    <title>Kedai Coding</title>
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,10 +13,6 @@
   <body>
 
     <%= render 'layouts/NavBar' %>
-    <%# Tolong kasih kondisi, 
-    supaya hanya muncul ketika ada kondisi. %>
-      <!--<p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>-->
     <%= yield %>
   </body>
 </html>
