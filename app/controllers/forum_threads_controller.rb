@@ -1,6 +1,6 @@
 class ForumThreadsController < ApplicationController
     before_action :authenticate_user! , only: [:new, :create]
-
+    
     def index
         @forum_threads = ForumThread.all
     end
@@ -11,10 +11,13 @@ class ForumThreadsController < ApplicationController
 
     def show
         @forum_thread = ForumThread.find(params[:id])
+        @forum_posts = ForumPost.all
+        @forum_post = ForumPost.new
     end
 
     def edit
-        @forum_thread = ForumThread.find(params[:id])        
+        @forum_thread = ForumThread.find(params[:id])
+        authorize @forum_thread        
     end  
 
     def create 
@@ -32,7 +35,7 @@ class ForumThreadsController < ApplicationController
 
     def update
         @forum_thread = ForumThread.find(params[:id])
-
+        authorize @forum_thread
         if @forum_thread.update(forumthreads_params)
           redirect_to forum_threads_path
         else
@@ -42,19 +45,19 @@ class ForumThreadsController < ApplicationController
 
     def destroy
         @forum_thread = ForumThread.find(params[:id])
-        @forum_thread.destroy
-        # authorize @berita_kegiatan
-    
-        redirect_to forum_threads_path
+        authorize @forum_thread
+
+        if @forum_thread.destroy
+            redirect_to forum_threads_path
+        else
+            render 'edit'         
+        end
     end
-    
-    
     
     private
     
     def forumthreads_params
         params.require(:forum_thread).permit(:title, :body, :tag)
     end
-    
-    
+       
 end

@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'landing_pages#index'
 
   resources :forum_threads do
-    resources :forum_post
-    resources :replies_post    
+    resources :forum_posts
+    resources :replies_posts    
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,6 +1,6 @@
 class ForumThread < ApplicationRecord
     belongs_to :user
-    # has_many   :forum_posts 
+    has_many   :forum_posts 
 
     validates :title, presence: {message: "Judul harus di isi" },
     length: {maximum: 50, message: "Maksimum karakter 50"}

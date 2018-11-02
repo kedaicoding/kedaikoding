@@ -6,7 +6,7 @@ class User < ApplicationRecord
   :confirmable, :lockable
 
   has_many :forum_threads
-  # has_many :forum_posts
+  has_many :forum_posts
   # has_many :replies_posts
 
 end
