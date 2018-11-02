@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :admins
   devise_for :users
+
+  resources :users, only: [:show]
   root to: 'landing_pages#index'
 
   resources :forum_threads do
