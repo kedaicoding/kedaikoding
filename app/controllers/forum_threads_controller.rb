@@ -11,7 +11,6 @@ class ForumThreadsController < ApplicationController
 
     def show
         @forum_thread = ForumThread.find(params[:id])
-        @forum_posts = ForumPost.all
         @forum_post = ForumPost.new
     end
 
