@@ -1,0 +1,21 @@
+<div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav uk-nav-default">
+            <%= link_to image_tag("KEDAICODINGLOGO-02.png", :alt => "KedaiCoding Logo", class:"w-100px"), root_path, class: 'uk-navbar-item uk-logo my-4', title: 'KedaiCoding', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' %>
+            <li> 
+                <% if user_signed_in? %>
+                    <%= link_to current_user.full_name, '#', class:'uk-button uk-button-danger purple' %>
+                <% else %>
+                    <%= link_to 'Sign In', new_user_session_path, class:'uk-button uk-button-danger purple' %>
+                <% end %>
+            </li>
+            <li class="uk-active"><%= link_to raw('<i class="fa fa-globe font-15 uk-margin-small-right"></i> Forum'), forum_threads_path, title: 'Forum', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' %></li>
+            <li><%= link_to raw('<i class="fa fa-bell font-15 uk-margin-small-right"></i><span class="badge badge-danger">15</span> Notification'), '#', title: 'Notification', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' %></li>
+            <li><%= link_to raw('<i class="fa fa-envelope font-15 uk-margin-small-right"></i><span class="badge badge-danger">4</span> Message'), '#', title: 'Message', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' %></li>
+            <li><li> <%= link_to raw('<i class="fa fa-question-circle font-15"></i> Help Center'), '#', title: 'Help Center', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' %> </li></li>
+            <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
+        </ul>
+    </div>
+</div>

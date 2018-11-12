@@ -13,6 +13,8 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require uikit
+//= require uikit-icons
 //= require rails-ujs
 //= require summernote/summernote-bs4.min
 //= require summernote-init
