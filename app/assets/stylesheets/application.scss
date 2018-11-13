@@ -6,6 +6,9 @@
 @import "uikit";
 @import "uikit-rtl";
 
+@import url('https://fonts.googleapis.com/css?family=Signika+Negative');
+@import url('https://fonts.googleapis.com/css?family=Yantramanav');
+
 
 $purple-color: #aa60a3 !important;
 $green-color: #4BB990 !important;
@@ -17,6 +20,22 @@ $dark-color: #333 !important;
 // GLOBAL SETTINGS
 body{
   background-color: $background-white-color;
+}
+.btn-outline-primary{
+  border-color: $green-color;
+}
+.btn-outline-primary:hover{
+  background-color: $purple-color;
+  color: white !important;
+}
+.btn-primary{
+  background-color: $green-color;
+  border-color: $green-smooth-color;
+}
+.btn-primary:hover{
+  background-color: $green-smooth-color;
+  border-color: $green-color;
+  color: #333;
 }
 // CUSTOM NAVBAR
 .font-15{
@@ -93,6 +112,20 @@ body{
 }
 .btn{
   border-radius: 0rem;
+}
+.uk-search-default{
+  width: 280px;
+}
+.uk-search-default .uk-search-icon-flip{
+  left: auto;
+  right: 0px;
+}
+.uk-search-input{
+  color: black;
+  border-color: black !important;
+}
+.uk-search-default .uk-search-icon-flip ~ .uk-search-input {
+  padding-left: 10px;
 }
 .text-xsmall{
   font-size: 0.7rem;
@@ -174,4 +207,24 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
+  }
+
+  // Show Threads
+  .threads{
+    // font-family: 'Signika Negative', sans-serif !important;
+    font-family: 'Yantramanav', sans-serif !important;
+  }
+  .threads p{
+    font-size: 1.1rem;
+  }
+  .nav-item{
+    font-size: 0.8rem;
+  }
+  .nav-link{
+    padding: 0.5rem 0.6rem;
+  }
+  @media screen and (max-width:785px){
+    .hide{
+      display: none;
+    }
   }

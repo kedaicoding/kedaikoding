@@ -1,46 +1,88 @@
-<section id="">
-    <div class="container py-12">
-        <div class = "row">
-            <div class = "col-md-8">
-                <%= sanitize @forum_thread.title %>
-                <%= sanitize @forum_thread.body %>
-                <div class = "form-group">
-                    <% if policy(@forum_thread).edit? %>
-                        <%= link_to "Edit", edit_forum_thread_path(@forum_thread), class: 'btn btn-warning' %>
-                        <%= link_to "Delete", forum_thread_path, method: :delete, data: { confirm: 'Are you sure?' },
-                        class: 'btn btn-danger' %>
-                    <% end %>
+<div class="uk-section-default">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="uk-child-width-expand@s my-5" uk-grid>
+          <div>
+            <h3 class="border-bottom ml-5 "><%= sanitize @forum_thread.title %></h3>
+            <div class="uk-card uk-card-default">
+              <div class="uk-card-header">
+                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                    <div class="uk-width-auto text-center">
+                      <%= image_tag 'ava.png', class:'uk-border-circle', 'width' => '30px', 'height' => '30px' %>
+                    </div>
+                    <div class="uk-width-expand">
+                        <div><a href="#" class="uk-margin-remove-bottom uk-link-heading">@username</a></div>
+                        <div><small class="text-small">User Achievment</small></div>
+                    </div>
                 </div>
-
-                <% if @forum_thread.forum_posts.any? %> 
-                    <% @forum_thread.forum_posts.each do |fp| %>
-                    <div class = "col-md-10">
-                        <div class="media">
-                            <img class="mr-3" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_166cfb4313c%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_166cfb4313c%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2214.5%22%20y%3D%2237.1%22%3E64x64%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Generic placeholder image">
-                            <div class="media-body">
-                                <p><%= sanitize fp.body %></p>
-                            </div>
-                        </div>
-                    </div> 
-                    <% end %>
-                <% else %>
-                    <p>Belum ada Komentar</p>
-                <% end %>
-                <div class = "row">
-                    <%= form_for [@forum_thread,@forum_post] do |f| %>
-                        <% if @forum_thread.errors[:body].any? %>
-                            <%= @forum_thread.errors[:body].first %>
-                        <% end %>
-                        <div class= "form-group">
-                            <%= f.label :body, "Body" %>
-                            <%= f.text_area :body, 'data-provider': :summernote  %>
-                        </div>
-                        <div>
-                            <%= f.submit "Post", class: 'btn btn-primary' %>
-                        </div>
-                    <% end %>
+              </div>
+              <div class="uk-card-body threads">
+                <div class="container-fluid">
+                  <div class="text-dark"><%= sanitize @forum_thread.body %></div>
+                  <div class = "form-group">
+                      <% if policy(@forum_thread).edit? %>
+                          <%= link_to "Edit", edit_forum_thread_path(@forum_thread), class: 'btn btn-warning' %>
+                          <%= link_to "Delete", forum_thread_path, method: :delete, data: { confirm: 'Are you sure?' },
+                          class: 'btn btn-danger' %>
+                      <% end %>
+                  </div>
                 </div>
+              </div>
+              <div class="uk-card-footer">
+                <div class="container">
+                  <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa fa-quote-right"></i> Quotes</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa fa-reply"></i> Reply</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa fa-coffee"></i> Give a Coffee</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false"><i class="fa fa-share-alt"></i> Share</a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#"><i class="fa fa-facebook-f"></i> Facebook</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-google-plus"></i> Google+</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link btn btn-sm btn-outline-primary" href="#"><i class="fa fa-copy"></i> Copy Link</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
+            
+            <%= render 'forum_threads/comment' %>
+
+            <div class="uk-card uk-card-default card-body my-3">
+              <%= form_for [@forum_thread,@forum_post] do |f| %>
+                <%if @forum_thread.errors[:body].any? %>
+                  <%= @forum_thread.errors[:body].first %>
+                <% end %>
+                <div class="form-group">
+                  <%= f.label :body, "Post an Answer" %>
+                  <%= f.text_area :body, 'data-provider': :summernote  %>
+                </div>
+                <div>
+                  <%= f.submit "Post", class: 'btn btn-primary' %>
+                </div>
+              <% end %>
+            </div>
+
+          </div>
         </div>
+      </div>
+      <div class="col-md-4">
+        <%= render 'forum_threads/sidethreads' %>
+      </div>
     </div>
-</section>
+  </div>
+</div>
+
+<script>
+  
+</script>

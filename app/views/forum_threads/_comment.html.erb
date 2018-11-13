@@ -1,0 +1,35 @@
+<div class="uk-card uk-card-default my-3">
+  <%if @forum_thread.forum_posts.any? %>
+    <%@forum_thread.forum_posts.each do |fp| %>
+      <div class="uk-card-header">
+        <div class="uk-grid-small uk-flex-middle">
+          <div class="uk-width-auto text-center">
+            <%= image_tag 'ava.png', class:'uk-border-circle', 'width' => '30px', 'height' => '30px' %>
+          </div>
+          <div class="uk-width-expand">
+            <div>
+              <a class="uk-margin-remove-bottom uk-link-heading" href="#">@username</a>
+            </div>
+            <div>
+              <small class="text-small">User Achievment</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="uk-card-body threads">
+        <div class="container-fluid">
+          <div class="text-dark">
+            <%= sanitize fp.body %>
+          </div>
+        </div>
+      </div>
+      <div class="uk-card-footer">
+      </div>
+    <%end %>
+  <%else %>
+    <div class="uk-card-body">
+      <p>Belum ada Komentar</p>
+    </div>
+  <%end %>
+</div>
