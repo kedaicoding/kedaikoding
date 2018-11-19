@@ -131,6 +131,12 @@ body{
   font-size: 0.7rem;
   margin: 0;
 }
+.text-small{
+  font-size: 13px;
+}
+.v-center{
+  vertical-align: middle;
+}
   // card label
     // colors label
     $android : #A4C639;
@@ -173,6 +179,9 @@ body{
   }
 
   // Card
+  .uk-grid + .uk-grid{
+    margin-top: 10px;
+  }
   .uk-card-title{
     font-size: 1rem;
   }
@@ -227,4 +236,8 @@ body{
     .hide{
       display: none;
     }
+  }
+  div.uk-card-media-top > img{
+    width: 100px !important;
+    height: 100px !important;
   }

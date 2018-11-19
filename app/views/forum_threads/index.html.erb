@@ -17,7 +17,15 @@
   </div>
 </div>
 
-<%= render 'forum_threads/category' %>
+<div class="uk-section-xsmall uk-section-muted">
+    <div class="uk-container uk-container-small">
+      <div class="uk-grid-match uk-child-width-expand@s uk-margin-remove" uk-grid>
+        <div><h4>Kagtegori</h4></div>
+        <div><%= link_to 'Lihat Semua', categories_index_path, class:'uk-link-heading text-right text-small v-center' %></div>
+      </div>
+        <%= render 'forum_threads/newcategory' %>
+    </div>
+</div>
 
 <div class="uk-container uk-container-small">
   <div class="row mt-3">
