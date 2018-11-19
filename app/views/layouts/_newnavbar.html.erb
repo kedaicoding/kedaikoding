@@ -12,6 +12,7 @@
             <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
         </a>
         <ul class="uk-navbar-nav">
+        <% if user_signed_in? %>
             <li>
                 <%= link_to raw('<i class="fa fa-bell font-15"></i><span class="badge badge-danger ml-1">15</span>'), '#', title: 'Notification', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' %>
                 <div class="uk-navbar-dropdown">
@@ -40,6 +41,7 @@
                     </ul>
                 </div>
             </li>
+				<% end %>
             <li> <%= link_to raw('<i class="fa fa-question-circle font-15"></i>'), '#', title: 'Help Center', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' %> </li>
             <li> 
                 <% if user_signed_in? %>

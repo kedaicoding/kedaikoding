@@ -1,59 +1,45 @@
-<section class="container-fluid">
-  <div class="row">
-    <div class="col-md-4 bg-warning text-dark left-sidebar-settings">
-    <div class="col-md-12">
-  <%= image_tag("KEDAICODINGLOGO-01.png", :alt => "KedaiCoding Logo", class:"rounded mx-auto d-block top-50", style:"width:40%; height:40%") %>
-    </div>
-      <h5 class="font-weight-bold my-2"><%= t('.sign_in') %></h5>
-
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="container px-5">
-        <div class="form-group">
-          <%= f.label :email %>
-          <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
-        </div>
-
-        <div class="form-group">
-          <%= f.label :password %>
-          <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
-        </div>
-
-        <% if devise_mapping.rememberable? %>
-          <div class="form-group form-check">
-            <%= f.check_box :remember_me, class: 'form-check-input' %>
-            <%= f.label :remember_me, class: 'form-check-label' do %>
-              <%= resource.class.human_attribute_name('remember_me') %>
-            <% end %>
+<div class="uk-section uk-section-default">
+  <div class="container">
+  <div class="row justify-content-center">
+      <div class="uk-card uk-card-hover uk-card-body p-3">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <legend class="uk-legend"><%= t('.sign_in') %></legend>
+          <div class="uk-margin">
+            <div class="uk-inline">
+              <span class="uk-form-icon" uk-icon="icon: mail"></span>
+              <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'uk-input', placeholder:'Email' %>
+            </div>
           </div>
+
+          <div class="uk-margin">
+            <div class="uk-inline">
+              <span class="uk-form-icon" uk-icon="icon: lock"></span>
+              <%= f.password_field :password, autocomplete: 'current-password', class: 'uk-input', placeholder:'Password' %>
+            </div>
+          </div>
+
+          <% if devise_mapping.rememberable? %>
+            <div class="form-group form-check">
+              <%= f.check_box :remember_me, class: 'form-check-input' %>
+              <%= f.label :remember_me, class: 'form-check-label' do %>
+                <%= resource.class.human_attribute_name('remember_me') %>
+              <% end %>
+            </div>
+          <% end %>
+
+          <div class="form-group">
+            <%= f.submit  "Sign in", class: 'btn btn-primary' %>
+          </div>
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <label>Don't have an account?</label><%= link_to " Sign up", new_registration_path(resource_name),class:'uk-link-heading' %><br />
+          <% end -%>
+
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "Forgot your password?", new_password_path(resource_name),class:'uk-link-heading' %><br />
+          <% end -%>
         <% end %>
-
-        <div class="form-group">
-          <%= f.submit  "Sign in", class: 'btn btn-dark btn-block' %>
         </div>
-      </div>
-      <% end %>
-      <div class="my-2">
-        <%= render 'devise/shared/links' %>
-      </div>
-      <div class="my-2 d-flex justify-content-center" style="font-size:18pt;">
-        <%= link_to raw('<i class="fa fa-twitter-square"></i>'), new_password_path(resource_name),class:'socmed mx-2' %>
-        <%= link_to raw('<i class="fa fa-facebook-square"></i>'), new_password_path(resource_name),class:'socmed mx-2' %>
-        <%= link_to raw('<i class="fa fa-instagram"></i>'), new_password_path(resource_name),class:'socmed mx-2' %>
-        <%= link_to raw('<i class="fa fa-youtube-square"></i>'), new_password_path(resource_name),class:'socmed mx-2' %>
-      </div>
-      <div class="d-flex justify-content-center">
-        <%= link_to 'Terms of Use', new_password_path(resource_name),class:'foot-link-color mx-2' %>
-        |
-        <%= link_to 'Help Center', new_password_path(resource_name),class:'foot-link-color mx-2' %>
-        |
-        <%= link_to 'Contact Us', new_password_path(resource_name),class:'foot-link-color mx-2' %>
-      </div>
-      <div class="d-flex justify-content-center">
-        KedaiCoding 2018 &copy; All Rights Reserved
-      </div>
     </div>
-    <div class="col-md-8 bg-login-img">
-
-    </div>
+    <div class="row justify-content-center text-small mt-3">KedaiCoding 2018 &copy; All Right's Reserved</div>
   </div>
-</section>
+</div>
