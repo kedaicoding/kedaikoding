@@ -1,0 +1,34 @@
+<%= form_for @forum_thread do |f| %>
+
+            <% if @forum_thread.errors[:title].any? %>
+                <%= @forum_thread.errors[:title].first %>
+            <% end %>
+
+            <div class = "form-group">
+                <%= f.label :title, "Title" %>
+                <%= f.text_field :title , class: 'form-control' %>
+            </div>
+
+            <% if @forum_thread.errors[:body].any? %>
+                <%= @forum_thread.errors[:body].first %>
+            <% end %>
+
+            <div class= "form-group">
+                <%= f.label :body, "Body" %>
+                <%= f.text_area :body, 'data-provider': :summernote  %>
+            </div>
+
+            <% if @forum_thread.errors[:tag].any? %>
+                <%= @forum_thread.errors[:tag].first %>
+            <% end %>
+
+            <div class = "form-group">
+                <%= f.label :tag, "Tag" %>
+                <%= f.text_field :tag , class: 'form-control' %>
+            </div>
+
+            <div>
+                <%= f.submit "Post", class: 'btn btn-primary' %>
+            </div>
+
+        <% end %>

@@ -1,0 +1,57 @@
+<nav class="uk-navbar-container" uk-navbar>
+
+    <div class="uk-navbar-left">
+      <%= link_to image_tag("KEDAICODINGLOGO-02.png", :alt => "KedaiCoding Logo", class:"w-100px"), root_path, class: 'uk-navbar-item uk-logo', title: 'KedaiCoding', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' %>
+      <ul class="uk-navbar-nav">
+        <li class="mx-5"><%= link_to raw('<i class="fa fa-globe font-15"></i> <span class="mx-1">Forum</span>'), forum_threads_path, title: 'Forum', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' %></li>
+      </ul>
+    </div>
+
+    <div class="uk-navbar-right">
+        <a class="uk-navbar-toggle" uk-toggle="target: #offcanvas-flip">
+            <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
+        </a>
+        <ul class="uk-navbar-nav">
+        <% if user_signed_in? %>
+            <li>
+                <%= link_to raw('<i class="fa fa-bell font-15"></i><span class="badge badge-danger ml-1">15</span>'), '#', title: 'Notification', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' %>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-nav-header">Notification</li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">@username123456789 Commented:<p>Hello, World!</p></a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li class="text-center"><a href="#">Show All</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <%= link_to raw('<i class="fa fa-envelope font-15"></i><span class="badge badge-warning ml-1">4</span>'), '#', title: 'Notification', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' %>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li class="uk-nav-header">Message</li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#">New Message From @username123456789 <p>Hello, World!</p></a></li>
+                        <li><a href="#">Item</a></li>
+                        <li><a href="#">Item</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li class="text-center"><a href="#">Show All</a></li>
+                    </ul>
+                </div>
+            </li>
+				<% end %>
+            <li> <%= link_to raw('<i class="fa fa-question-circle font-15"></i>'), '#', title: 'Help Center', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' %> </li>
+            <li> 
+                <% if user_signed_in? %>
+                    <%= link_to current_user.full_name, '#', class:'uk-button uk-button-danger purple' %>
+                <% else %>
+                    <%= link_to 'Sign In', new_user_session_path, class:'uk-button uk-button-danger purple' %>
+                <% end %>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<%= render 'layouts/sidebar' %>

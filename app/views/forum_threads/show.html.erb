@@ -1,0 +1,88 @@
+<div class="uk-section-default">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="uk-child-width-expand@s my-5" uk-grid>
+          <div>
+            <h3 class="border-bottom ml-5 "><%= sanitize @forum_thread.title %></h3>
+            <div class="uk-card uk-card-default">
+              <div class="uk-card-header">
+                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                    <div class="uk-width-auto text-center">
+                      <%= image_tag 'ava.png', class:'uk-border-circle', 'width' => '30px', 'height' => '30px' %>
+                    </div>
+                    <div class="uk-width-expand">
+                        <div><a href="#" class="uk-margin-remove-bottom uk-link-heading">@username</a></div>
+                        <div><small class="text-small">User Achievment</small></div>
+                    </div>
+                </div>
+              </div>
+              <div class="uk-card-body threads">
+                <div class="container-fluid">
+                  <div class="text-dark"><%= sanitize @forum_thread.body %></div>
+                  <div class = "form-group">
+                      <% if policy(@forum_thread).edit? %>
+                          <%= link_to "Edit", edit_forum_thread_path(@forum_thread), class: 'btn btn-warning' %>
+                          <%= link_to "Delete", forum_thread_path, method: :delete, data: { confirm: 'Are you sure?' },
+                          class: 'btn btn-danger' %>
+                      <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class="uk-card-footer">
+                <div class="container">
+                  <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa fa-quote-right"></i> Quotes</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa fa-reply"></i> Reply</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><i class="fa fa-coffee"></i> Give a Coffee</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false"><i class="fa fa-share-alt"></i> Share</a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#"><i class="fa fa-facebook-f"></i> Facebook</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-google-plus"></i> Google+</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link btn btn-sm btn-outline-primary" href="#"><i class="fa fa-copy"></i> Copy Link</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <%= render 'forum_threads/comment' %>
+
+            <div class="uk-card uk-card-default card-body my-3">
+              <%= form_for [@forum_thread,@forum_post] do |f| %>
+                <%if @forum_thread.errors[:body].any? %>
+                  <%= @forum_thread.errors[:body].first %>
+                <% end %>
+                <div class="form-group">
+                  <%= f.label :body, "Post an Answer" %>
+                  <%= f.text_area :body, 'data-provider': :summernote  %>
+                </div>
+                <div>
+                  <%= f.submit "Post", class: 'btn btn-primary' %>
+                </div>
+              <% end %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <%= render 'forum_threads/sidethreads' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  
+</script>

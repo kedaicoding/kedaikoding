@@ -1,0 +1,243 @@
+@import "bootstrap";
+@import "font-awesome";
+@import "summernote-bs4";
+@import "summernote-custom-theme.min";
+
+@import "uikit";
+@import "uikit-rtl";
+
+@import url('https://fonts.googleapis.com/css?family=Signika+Negative');
+@import url('https://fonts.googleapis.com/css?family=Yantramanav');
+
+
+$purple-color: #aa60a3 !important;
+$green-color: #4BB990 !important;
+$green-smooth-color: #effcf7 !important;
+$purple-smooth-color: #dbc9d9 !important;
+$background-white-color: #efefef !important;
+$dark-color: #333 !important;
+
+// GLOBAL SETTINGS
+body{
+  background-color: $background-white-color;
+}
+.btn-outline-primary{
+  border-color: $green-color;
+}
+.btn-outline-primary:hover{
+  background-color: $purple-color;
+  color: white !important;
+}
+.btn-primary{
+  background-color: $green-color;
+  border-color: $green-smooth-color;
+}
+.btn-primary:hover{
+  background-color: $green-smooth-color;
+  border-color: $green-color;
+  color: #333;
+}
+// CUSTOM NAVBAR
+.font-15{
+  font-size: 1.5rem;
+}
+.w-100px{
+  width: 110px;
+}
+.uk-navbar-nav > li > a{
+  -webkit-transition: 0.2s; /* Safari */
+    transition: 0.2s;
+    transition-timing-function: linear;
+}
+.uk-navbar-nav > li > a:hover{
+  border-top: 6px solid $green-color;
+}
+.uk-navbar-nav > li .purple{
+  height: 0;
+  color: white;
+  -webkit-transition: 0.2s; /* Safari */
+    transition: 0.2s;
+    transition-timing-function: linear;
+}
+.uk-navbar-nav > li .purple:hover{
+  color: white;
+  background-color: $purple-color ;
+  height: 100%;
+}
+
+.uk-navbar-dropdown{
+  padding: 10px 0px;
+  width: 400px;
+}
+.uk-nav > li > a{
+  padding: 10px 25px;
+}
+.uk-nav-header{
+  padding: 5px 15px;
+}
+.uk-nav > li > a:hover{
+  background-color: $green-smooth-color;
+  color: $dark-color;
+  border-left: 6px solid $green-color;
+}
+.uk-nav > li .purple{
+  color: white !important;
+  -webkit-transition: 0.2s; /* Safari */
+    transition: 0.2s;
+    transition-timing-function: linear;
+}
+.uk-nav > li .purple:hover{
+  color: white !important;
+  background-color: $purple-color ;
+}
+.uk-navbar-right .uk-navbar-toggle{
+  display: none;
+}
+@media screen and (max-width:785px ){
+  .uk-navbar-nav{
+    display: none;
+  }
+  .uk-navbar-right .uk-navbar-toggle{
+    display: block;
+    padding-top: 30px;
+  }
+  .uk-nav-header{
+    padding: 35px 15px;
+  }
+}
+
+// FORUM HOMEPAGE
+.banner-img{
+  background-image: image-url('banner.jpg');
+}
+.btn{
+  border-radius: 0rem;
+}
+.uk-search-default{
+  width: 280px;
+}
+.uk-search-default .uk-search-icon-flip{
+  left: auto;
+  right: 0px;
+}
+.uk-search-input{
+  color: black;
+  border-color: black !important;
+}
+.uk-search-default .uk-search-icon-flip ~ .uk-search-input {
+  padding-left: 10px;
+}
+.text-xsmall{
+  font-size: 0.7rem;
+  margin: 0;
+}
+.text-small{
+  font-size: 13px;
+}
+.v-center{
+  vertical-align: middle;
+}
+  // card label
+    // colors label
+    $android : #A4C639;
+    $laravel: #f05340;
+    $php: #4f5b93;
+    $google-ads: #4285F4;
+    $ruby: #9b111e;
+    $ruby-on-rails: #cc0000;
+
+  .android-color{
+    background-color: $android;
+  }
+  .laravel-color{
+    background-color: $laravel;
+  }
+  .php-color{
+    background-color: $php;
+    color: white;
+  }
+  .google-ads-color{
+    background-color: $google-ads;
+  }
+  .ruby-color{
+    background-color: $ruby;
+  }
+  .ruby-on-rails-color{
+    background-color: $ruby-on-rails;
+  }
+  .uk-label{
+    padding: 3px 5px;
+    font-size: 0.6rem;
+  }
+  a.uk-label{
+    text-decoration: none;
+    color: white;
+  }
+  .uk-card-badge{
+   right: 30px;
+   left: auto; 
+  }
+
+  // Card
+  .uk-grid + .uk-grid{
+    margin-top: 10px;
+  }
+  .uk-card-title{
+    font-size: 1rem;
+  }
+  .uk-card-body{
+    padding: 10px 10px;
+  }
+  .uk-grid > *{
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  .uk-card-header{
+    padding: 0px 20px;
+  }
+  .uk-card-footer{
+    padding: 10px 20px;
+  }
+  .uk-width-auto{
+    padding: 20px 10px;
+  }
+  .card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);                                     
+  }
+  a.uk-link-heading:hover{
+    color: $green-color;
+  }
+  .uk-card-badge > .uk-link-heading{
+    font-size: 13px;
+  }
+  div.uk-card-media-top > img{
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+  // Show Threads
+  .threads{
+    // font-family: 'Signika Negative', sans-serif !important;
+    font-family: 'Yantramanav', sans-serif !important;
+  }
+  .threads p{
+    font-size: 1.1rem;
+  }
+  .nav-item{
+    font-size: 0.8rem;
+  }
+  .nav-link{
+    padding: 0.5rem 0.6rem;
+  }
+  @media screen and (max-width:785px){
+    .hide{
+      display: none;
+    }
+  }
+  div.uk-card-media-top > img{
+    width: 100px !important;
+    height: 100px !important;
+  }
