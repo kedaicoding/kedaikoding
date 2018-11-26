@@ -10,14 +10,27 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+
 //= require jquery3
+//= require jquery
+//  require jquery_ujs
+//= require chosen-jquery
+//= require scaffold
 //= require popper
 //= require bootstrap
 //= require uikit
 //= require uikit-icons
-//= require rails-ujs
 //= require summernote/summernote-bs4.min
 //= require summernote-init
-//= require activestorage
+//= require rails-ujs
 //= require turbolinks
+//= require activestorage
 //= require_tree .
+
+$(function(){
+    $('a[data-reload="true"').on('click', function(e) {
+        window.location = $(e.target).attr('href');
+        window.location.reload(true);
+    });
+});

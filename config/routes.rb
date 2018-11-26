@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
   root to: 'landing_pages#index'
+  get 'tags/:tag', to: 'forum_threads#index', as: :tag
 
   resources :forum_threads do
     resources :forum_posts

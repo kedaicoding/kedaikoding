@@ -2,7 +2,7 @@ class ForumThreadsController < ApplicationController
     before_action :authenticate_user! , only: [:new, :create]
     
     def index
-        @forum_threads = ForumThread.all
+        params[:tag] ? @forum_threads = ForumThread.tagged_with(params[:tag]) : @forum_threads = ForumThread.all
     end
 
     def new 
@@ -56,7 +56,7 @@ class ForumThreadsController < ApplicationController
     private
     
     def forumthreads_params
-        params.require(:forum_thread).permit(:title, :body, :tag)
+        params.require(:forum_thread).permit(:title, :body, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
     end
        
 end
