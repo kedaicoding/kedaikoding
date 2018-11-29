@@ -45,7 +45,16 @@
             <li> <%= link_to raw('<i class="fa fa-question-circle font-15"></i>'), '#', title: 'Help Center', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' %> </li>
             <li> 
                 <% if user_signed_in? %>
-                    <%= link_to current_user.full_name, '#', class:'uk-button uk-button-danger purple' %>
+                    <li>
+                        <%= link_to current_user.full_name, '#', class:'uk-button uk-button-danger purple' %>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li>
+                                    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 <% else %>
                     <%= link_to 'Sign In', new_user_session_path, class:'uk-button uk-button-danger purple' %>
                 <% end %>
