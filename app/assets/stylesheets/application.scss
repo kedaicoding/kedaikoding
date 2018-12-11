@@ -243,3 +243,7 @@ body{
     width: 100px !important;
     height: 100px !important;
   }
+
+  abbr[title="required"] {
+    display: none;
+  }

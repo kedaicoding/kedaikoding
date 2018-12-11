@@ -5,16 +5,16 @@ class ForumThread < ApplicationRecord
     has_many    :tags, through: :taggings
 
 
-    validates :title, presence: {message: "Judul harus di isi" },
+    validates :title, presence: {message: "harus di isi" },
     length: {maximum: 50, message: "Maksimum karakter 50"}
     
-    validates :body, presence: {message: "Body content tidak boleh kosong"}
+    validates :body, presence: {message: "content tidak boleh kosong"}
 
     # validates :tag, presence: {message: "Tag tidak boleh kosong "}
     
 
   def self.tagged_with(name)
-    Tag.find_by!(name: name).posts
+    Tag.find_by!(name: name).forum_threads
   end
 
   def self.tag_counts

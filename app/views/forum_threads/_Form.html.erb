@@ -1,24 +1,15 @@
 <%= simple_form_for @forum_thread do |f| %>
 
-            <% if @forum_thread.errors[:title].any? %>
-                <%= @forum_thread.errors[:title].first %>
-            <% end %>
 
             <div class = "form-group">
-                <%= f.input :title, input_html: { class: 'form-control'} %>
+                <%= f.input :title %>
             </div>
 
-            <% if @forum_thread.errors[:body].any? %>
-                <%= @forum_thread.errors[:body].first %>
-            <% end %>
 
             <div class= "form-group">
               <%= f.input :body, as: :summernote %>
             </div>
 
-            <% if @forum_thread.errors[:tag_ids].any? %>
-                <%= @forum_thread.errors[:tag_ids].first %>
-            <% end %>
 
             <div class = "form-group">
               <%= f.input :tag_ids, as: :select, 
