@@ -3,6 +3,7 @@ class ForumThreadsController < ApplicationController
     
     def index
         params[:tag] ? @forum_threads = ForumThread.tagged_with(params[:tag]) : @forum_threads = ForumThread.all
+        @tags = Tag.all
     end
 
     def new 

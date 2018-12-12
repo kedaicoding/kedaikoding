@@ -1,50 +1,13 @@
-      <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
-          <div>
-              <a class="uk-card uk-card-default" >
-                <div class="uk-card-media-top">
-                    <%= image_tag 'category_icon/angular.png', alt:'Category Image 1' %>
-                </div>
-                <div class="uk-card-body">angular.js</div>
-              </a>
-          </div>
-          <div>
-              <a class="uk-card uk-card-default" >
-                <div class="uk-card-media-top">
-                    <%= image_tag 'category_icon/javascript.png', alt:'Category Image 1' %>
-                </div>
-                <div class="uk-card-body">Javascript</div>
-              </a>
-          </div>
-          <div>
-              <a class="uk-card uk-card-default" >
-                <div class="uk-card-media-top">
-                    <%= image_tag 'category_icon/jquery.png', alt:'Category Image 1' %>
-                </div>
-                <div class="uk-card-body">Jquery</div>
-              </a>
-          </div>
-          <div>
-              <a class="uk-card uk-card-default" >
-                <div class="uk-card-media-top">
-                    <%= image_tag 'category_icon/laravel.png', alt:'Category Image 1' %>
-                </div>
-                <div class="uk-card-body">Laravel</div>
-              </a>
-          </div>
-          <div>
-              <a class="uk-card uk-card-default" >
-                <div class="uk-card-media-top">
-                    <%= image_tag 'category_icon/php.png', alt:'Category Image 1' %>
-                </div>
-                <div class="uk-card-body">Php</div>
-              </a>
-          </div>
-          <div>
-              <a class="uk-card uk-card-default" >
-                <div class="uk-card-media-top">
-                    <%= image_tag 'category_icon/android.png', alt:'Category Image 1' %>
-                </div>
-                <div class="uk-card-body">Android</div>
-              </a>
-          </div>
-      </div>
+<div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
+
+    <% @tags.each do |tag| %>
+    <div>
+        <a class="uk-card uk-card-default" >
+            <div class="uk-card-media-top">
+                <%= image_tag 'category_icon/angular.png', alt:'Category Image 1' %>
+            </div>
+            <div class="uk-card-body"><%= link_to tag.name , tag_path(tag.name) %></div>
+        </a>
+     </div>
+     <% end %>
+</div>
