@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_29_182112) do
+ActiveRecord::Schema.define(version: 2018_12_11_162917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2018_11_29_182112) do
     t.text "body"
     t.string "tag"
     t.integer "user_id"
+    t.boolean "solved", default: false
   end
 
   create_table "mailboxer_conversation_opt_outs", id: :serial, force: :cascade do |t|

@@ -10,12 +10,12 @@
                 </div>
                 <div class="uk-width-expand">
                     <div><a href="#" class="uk-margin-remove-bottom uk-link-heading"><%= ft.user.full_name %></a></div>
-                    <div><small class="text-small">User Achievment</small></div>
+                    <div><small class="text-small">Status <%= ft.solved ? "Solved" : "Belom" %></small></div>
                 </div>
             </div>
         </div>
         <div class="uk-card-body">
-          <a href="#" class="uk-card-title uk-margin-remove-bottom uk-text-left"><%= ft.title %></a>
+          <a href="#" class="uk-card-title uk-margin-remove-bottom uk-text-left"><%= link_to ft.title, forum_thread_path(ft) %></a>
         </div>
         <div class="uk-card-footer">
           <p class="uk-text-meta uk-margin-remove-top text-xsmall"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
