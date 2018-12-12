@@ -1,0 +1,80 @@
+<div class="container">
+  <%= form_for @user do |f| %>
+    <div class="row">
+
+      <div class="col">
+        <% if @user.errors[:full_name].any? %>
+          <%= @user.errors[:full_name].first %>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :full_name, "Full Name" %>
+          <%= f.text_field :full_name, class:'form-control' %>
+        </div>
+        
+        <% if @user.errors[:gender].any? %>
+          <%= @user.errors[:gender].first %>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :gender, "Gender" %>
+          <%= f.select(:gender, [["Not Telling", 1], ["Male", 2], ["Female", 3]], class:'custom-select') %>
+        </div>
+
+        <% if @user.errors[:phone_number].any? %>
+          <%= @user.errors[:phone_number].first %>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :phone_number, "Phone Number" %>
+          <%= f.text_field :phone_number, class:'form-control' %>
+        </div>
+
+        <% if @user.errors[:email].any? %>
+          <%= @user.errors[:email].first %>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :email, "E-mail" %>
+          <%= f.text_field :email, class:'form-control' %>
+        </div>
+        
+        <% if @user.errors[:address].any? %>
+          <%= @user.errors[:address].first %>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :address, "Address" %>
+          <%= f.text_area :address, class:'form-control' %>
+        </div>
+
+      </div>
+
+      <div class="col">
+
+        <% if @user.errors[:role].any? %>
+          <%= @user.errors[:role].first %>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :role, "Role" %>
+          <%= f.text_field :role, class:'form-control' %>
+        </div>
+
+        <% if @user.errors[:role_in_team].any? %>
+          <%= @user.errors[:role_in_team].first %>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :role_in_team, "Role In Team" %>
+          <%= f.text_field :role_in_team, class:'form-control' %>
+        </div>
+
+        <% if @user.errors[:created_at].any? %>
+          <%= @user.errors[:created_at].first %>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :created_at, "Member Since" %>
+          <%= f.text_field :created_at, class:'form-control', :disabled => true, :maxlength => 12 %>
+        </div>
+
+      </div>
+    </div>
+    <div>
+        <%= f.submit "Save", class: 'btn btn-primary btn-block' %>
+      </div>
+  <% end %>
+</div>
