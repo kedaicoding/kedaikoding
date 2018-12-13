@@ -6,11 +6,8 @@
 @import "uikit";
 @import "uikit-rtl";
 
-<<<<<<< HEAD
 @import "chosen";
 
-=======
->>>>>>> 7af691d7d5c358474db859cda51aa52e56554fcc
 @import url('https://fonts.googleapis.com/css?family=Signika+Negative');
 @import url('https://fonts.googleapis.com/css?family=Yantramanav');
 
@@ -21,29 +18,11 @@ $green-smooth-color: #effcf7 !important;
 $purple-smooth-color: #dbc9d9 !important;
 $background-white-color: #efefef !important;
 $dark-color: #333 !important;
-<<<<<<< HEAD
-=======
-$gold-color: #ffd700 !important;
->>>>>>> 7af691d7d5c358474db859cda51aa52e56554fcc
 
 // GLOBAL SETTINGS
 body{
   background-color: $background-white-color;
 }
-<<<<<<< HEAD
-=======
-.hover-green:hover{
-  background-color: $green-smooth-color;
-  color: $dark-color;
-  border-left: 6px solid $green-color;
-}
-.font-16{
-  font-size: 16px !important;
-}
-.gold-color{
-  color: $gold-color;
-}
->>>>>>> 7af691d7d5c358474db859cda51aa52e56554fcc
 .btn-outline-primary{
   border-color: $green-color;
 }
