@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
 
-  resources :users, only: [:show]
+  resources :users
   root to: 'landing_pages#index'
   get 'tags/:tag', to: 'forum_threads#index', as: :tag
 
