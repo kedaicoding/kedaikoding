@@ -156,9 +156,12 @@ ActiveRecord::Schema.define(version: 2018_12_12_050059) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+<<<<<<< HEAD
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
   add_foreign_key "taggings", "forum_threads"
   add_foreign_key "taggings", "tags"
+=======
+>>>>>>> 7af691d7d5c358474db859cda51aa52e56554fcc
 end
