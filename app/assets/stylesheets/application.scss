@@ -16,10 +16,22 @@ $green-smooth-color: #effcf7 !important;
 $purple-smooth-color: #dbc9d9 !important;
 $background-white-color: #efefef !important;
 $dark-color: #333 !important;
+$gold-color: #ffd700 !important;
 
 // GLOBAL SETTINGS
 body{
   background-color: $background-white-color;
+}
+.hover-green:hover{
+  background-color: $green-smooth-color;
+  color: $dark-color;
+  border-left: 6px solid $green-color;
+}
+.font-16{
+  font-size: 16px !important;
+}
+.gold-color{
+  color: $gold-color;
 }
 .btn-outline-primary{
   border-color: $green-color;
