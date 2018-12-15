@@ -58,6 +58,8 @@
             
             <%= render 'forum_threads/comment' %>
 
+            
+            <% if user_signed_in?  %>
             <div class="uk-card uk-card-default card-body my-3">
               <%= form_for [@forum_thread,@forum_post] do |f| %>
                 <%if @forum_thread.errors[:body].any? %>
@@ -71,7 +73,11 @@
                   <%= f.submit "Post", class: 'btn btn-primary' %>
                 </div>
               <% end %>
-            </div>
+            </div>             
+            <% end %>
+            
+
+       
 
           </div>
         </div>

@@ -21,7 +21,7 @@
     <div class="uk-container uk-container-small">
       <div class="uk-grid-match uk-child-width-expand@s uk-margin-remove" uk-grid>
         <div><h4>Kagtegori</h4></div>
-        <div><%= link_to 'Lihat Semua', categories_index_path, class:'uk-link-heading text-right text-small v-center' %></div>
+        <div><%= link_to 'Lihat Semua', '#', class:'uk-link-heading text-right text-small v-center' %></div>
       </div>
         <%= render 'forum_threads/newcategory' %>
     </div>
@@ -30,7 +30,7 @@
 <div class="uk-container uk-container-small">
   <div class="row mt-3">
     <div class="col">
-    <%= link_to raw('<i class="fa fa-plus"></i>Make a New Post'), new_forum_thread_path, class:'btn btn-primary' %>
+    <%= link_to raw('<i class="fa fa-plus"></i>Make a New Post'), new_forum_thread_path,method: :get , class:'btn btn-primary' %>
       <%# <a href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Make a New Post</a> %>
     </div>
     <div>
@@ -42,15 +42,6 @@
   </div>
 </div>
 
-<%= render 'forum_threads/card' %>
-
-<%= render 'forum_threads/card' %>
-
-<%= render 'forum_threads/card' %>
+<%= render 'forum_threads/card' , forum_thread: @forum_threads %>
 
 <%= render 'forum_threads/footer' %>
-
-<% @forum_threads.each do |ft| %>
-<%= link_to ft.title, forum_thread_path(ft),class:'uk-link-text' %>
-<%= ft.tag %>
-<% end %>

@@ -3,6 +3,9 @@ class UsersController < ApplicationController
 
     def show 
         @user = User.find(params['id'])
+        user_threads = @user.forum_threads.count
+        user_posts = @user.forum_posts.count
+        @total_post = user_threads.to_i + user_posts.to_i
     end
 
     def edit

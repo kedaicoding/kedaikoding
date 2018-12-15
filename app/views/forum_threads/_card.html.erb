@@ -1,5 +1,6 @@
 <div class="container">
   <div class="uk-child-width-expand@s my-3" uk-grid uk-parallax="opacity: 0,1; y: 100,0; viewport: 0.5">
+    <% forum_thread.each do |ft| %>
     <div>
       <div class="uk-card uk-card-default">
         <div class="uk-card-header">
@@ -8,113 +9,27 @@
                   <%= image_tag 'ava.png', class:'uk-border-circle', 'width' => '30px', 'height' => '30px' %>
                 </div>
                 <div class="uk-width-expand">
-                    <div><a href="#" class="uk-margin-remove-bottom uk-link-heading">@username</a></div>
-                    <div><small class="text-small">User Achievment</small></div>
+                    <div><a href="#" class="uk-margin-remove-bottom uk-link-heading"><%= ft.user.full_name %></a></div>
+                    <div><small class="text-small">Status <%= ft.solved ? "Solved" : "Belom" %></small></div>
                 </div>
             </div>
         </div>
         <div class="uk-card-body">
-          <a href="#" class="uk-card-title uk-margin-remove-bottom uk-text-left">Ini Judulnya harus panjang gimana biar panjang judulnya</a>
+          <a href="#" class="uk-card-title uk-margin-remove-bottom uk-text-left"><%= link_to ft.title, forum_thread_path(ft) %></a>
         </div>
         <div class="uk-card-footer">
           <p class="uk-text-meta uk-margin-remove-top text-xsmall"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
           <div class="row float-right mt-1">
             <div class="col">
-              <a class="badge uk-label php-color text-white">PHP</a>
-              <a class="badge uk-label laravel-color text-white">Laravel</a>
-              <a class="badge uk-label android-studio-color text-white">android-studio</a>
+              <%= raw ft.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div>
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-header">
-            <div class="uk-grid-small uk-flex-middle" uk-grid>
-                <div class="uk-width-auto text-center">
-                  <%= image_tag 'ava.png', class:'uk-border-circle', 'width' => '30px', 'height' => '30px' %>
-                </div>
-                <div class="uk-width-expand">
-                    <div><a href="#" class="uk-margin-remove-bottom uk-link-heading">@username</a></div>
-                    <div><small class="text-small">User Achievment</small></div>
-                </div>
-            </div>
-        </div>
-        <div class="uk-card-body">
-          <a href="#" class="uk-card-title uk-margin-remove-bottom uk-text-left">Ini Judulnya harus panjang gimana biar panjang judulnya</a>
-        </div>
-        <div class="uk-card-footer">
-          <p class="uk-text-meta uk-margin-remove-top text-xsmall"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
-          <div class="row float-right mt-1">
-            <div class="col">
-              <a class="badge uk-label php-color text-white">PHP</a>
-              <a class="badge uk-label laravel-color text-white">Laravel</a>
-              <a class="badge uk-label android-studio-color text-white">android-studio</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <% end %>
 
-    <div>
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-header">
-            <div class="uk-grid-small uk-flex-middle" uk-grid>
-                <div class="uk-width-auto text-center">
-                  <%= image_tag 'ava.png', class:'uk-border-circle', 'width' => '30px', 'height' => '30px' %>
-                </div>
-                <div class="uk-width-expand">
-                    <div><a href="#" class="uk-margin-remove-bottom uk-link-heading">@username</a></div>
-                    <div><small class="text-small">User Achievment</small></div>
-                </div>
-            </div>
-        </div>
-        <div class="uk-card-body">
-          <a href="#" class="uk-card-title uk-margin-remove-bottom uk-text-left">Ini Judulnya harus panjang gimana biar panjang judulnya</a>
-        </div>
-        <div class="uk-card-footer">
-          <p class="uk-text-meta uk-margin-remove-top text-xsmall"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
-          <div class="row float-right mt-1">
-            <div class="col">
-              <a class="badge uk-label php-color text-white">PHP</a>
-              <a class="badge uk-label laravel-color text-white">Laravel</a>
-              <a class="badge uk-label android-studio-color text-white">android-studio</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <div class="uk-card uk-card-default">
-        <div class="uk-card-header">
-            <div class="uk-grid-small uk-flex-middle" uk-grid>
-                <div class="uk-width-auto text-center">
-                  <%= image_tag 'ava.png', class:'uk-border-circle', 'width' => '30px', 'height' => '30px' %>
-                </div>
-                <div class="uk-width-expand">
-                    <div><a href="#" class="uk-margin-remove-bottom uk-link-heading">@username</a></div>
-                    <div><small class="text-small">User Achievment</small></div>
-                </div>
-            </div>
-        </div>
-        <div class="uk-card-body">
-          <a href="#" class="uk-card-title uk-margin-remove-bottom uk-text-left">Ini Judulnya harus panjang gimana biar panjang judulnya</a>
-        </div>
-        <div class="uk-card-footer">
-          <p class="uk-text-meta uk-margin-remove-top text-xsmall"><time datetime="2016-04-01T19:00">April 01, 2016</time></p>
-          <div class="row float-right mt-1">
-            <div class="col">
-              <a class="badge uk-label php-color text-white">PHP</a>
-              <a class="badge uk-label laravel-color text-white">Laravel</a>
-              <a class="badge uk-label android-studio-color text-white">android-studio</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    
   </div>
 </div>
