@@ -19,7 +19,7 @@
 //= require scaffold
 //= require bootstrap
 //= require popper
-//= require uikit
+//= require "uikit"
 //= require uikit-icons
 //= require summernote/summernote-bs4.min
 //= require summernote-init

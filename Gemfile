@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
-gem 'uikit-rails'
+gem "rails-uikit", git: 'git://github.com/nicbet/rails-uikit.git'
 gem 'simple_form'
 gem 'chosen-rails'
 gem 'pundit'

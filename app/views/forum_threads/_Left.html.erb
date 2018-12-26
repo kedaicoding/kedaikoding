@@ -1,0 +1,43 @@
+<div class="card no-border-raduis">
+  <%= image_tag 'banner-bg', class:'card-img-top no-border-radius', :alt => 'banner-user' %>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6 avatar">
+        <%= image_tag 'picture-default', class:'rounded rounded-circle img-profile-sm', :alt=> 'user-picture' %>
+      </div>
+      <div class="col-md-6 pl-0">
+        <p class="m-0 text-truncate font-weight-bold"><%= current_user.full_name %></p>
+        <h6 class="small text-truncate p-0"><%= current_user.email %></h6>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col text-center border-right">
+        <p class="m-0 p-0">10</p>
+        <small>posts</small>
+      </div>
+      <div class="col text-center">
+        <p class="m-0 p-0">10</p>
+        <small>subsciber</small>
+      </div>
+      <div class="col text-center border-left">
+        <p class="m-0 p-0">10</p>
+        <small>like</small>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <a href="#" class="small m-0 p-0 pull-right">edit profile</a>
+  </div>
+</div>
+<div class="card no-border-raduis mt-3">
+  <div class="card-body">
+    <h6 class="card-title font-weight-bold">Favorite Tag</h6>
+    <hr>
+    <a href="#" class="badge badge-php">php</a>
+    <a href="#" class="badge badge-javascript">javacript</a>
+    <a href="#" class="badge badge-ruby">ruby</a>
+  </div>
+  <div class="card-footer text-center">
+    <a href="#" class="small">Add More Favorite Tags</a>
+  </div>
+</div>

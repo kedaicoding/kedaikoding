@@ -1,0 +1,73 @@
+<div class="card no-border-radius bg-green">
+  <div class="card-body py-2">
+      <div class="row">
+        <div class="col-md-1 align-self-center">
+          <%= image_tag 'picture-default', class:'rounded rounded-circle logo-w-100', :alt=> 'user-picture' %>
+        </div>
+        <div id="post_field" class="col">
+          <form>
+            <input type="text" name="tittle" id="question" class="form-control" placeholder="What did u want to ask?">
+            <div class="py-2 hidden">
+              <textarea id="question_field" type="text" class="form-control" placeholder="Type your question here." name="question" rows="1"></textarea>
+              <div class="float-right my-2 mr-2">
+                <button type="submit" class="btn btn-outline-white mr-auto font-weight-bold">Ask!</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="card no-border-radius mt-1">
+  <div class="card-body py-2">
+    <ul class="nav nav-pills nav-justified nav-pills-shadow my-2 py-2">
+      <div class="border-slider"></div>
+      <li class="nav-item">
+        <a class="nav-link active" id="newest-tab" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="true">Newest Threads</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="popular-tab" data-toggle="tab" href="#popular" role="tab" aria-controls="popular" aria-selected="false">Popular Threads</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="newest-tab">
+        <%= render 'forum_threads/TabNewest' %>
+      </div>
+      <div class="tab-pane fade" id="popular" role="tabpanel" aria-labelledby="popular-tab">
+        <%= render 'forum_threads/TabPopular' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $("#question").click(function() {
+      $("#question_field").attr('rows', '3');
+      $(".hidden").show(200);
+    });
+    $(document).mouseup(function(e){
+      var content = $("#post_field");
+      if (!content.is(e.target) && content.has(e.target).length === 0) {
+        $("#question").attr('rows', '1');
+        $(".hidden").hide(200);
+      }
+    });
+    $("#add_picture").click(function(){
+      $("#picture").click();
+    });
+
+    // SLIDER FOR NAVS
+    $(".nav-pills a").click(function() {
+      var position = $(this).parent().position();
+      var width = $(this).parent().width();
+        $(".border-slider").css({"left":+ position.left,"width":width});
+    });
+    var actWidth = $(".nav-pills").find(".active").parent("li").width();
+    var actPosition = $(".nav-pills .active").position();
+    $(".border-slider").css({"left":+ actPosition.left,"width": actWidth});
+
+  });
+  
+</script>

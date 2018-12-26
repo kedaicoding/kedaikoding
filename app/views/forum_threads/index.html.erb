@@ -1,47 +1,16 @@
-<div class="uk-section-default">
-  <div class="uk-section uk-light uk-background-cover banner-img">
-    <div class="uk-container">
-      <h3 class="font-weight-bold">ARE YOU LOST?</h3>
-      <div class="uk-grid-match uk-child-width-1-3@m">
-        <div>
-          <p>Stuck on Code, but doesn't know where to ask a solution?</p>
-        </div>
-        <div>
-          <p>Let me Show you the answer!</p>
-        </div>
-        <div>
-          <%= link_to 'Follow Me!', new_user_session_path, class:'btn btn-outline-danger' %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="uk-section-xsmall uk-section-muted">
-    <div class="uk-container uk-container-small">
-      <div class="uk-grid-match uk-child-width-expand@s uk-margin-remove" uk-grid>
-        <div><h4>Kagtegori</h4></div>
-        <div><%= link_to 'Lihat Semua', '#', class:'uk-link-heading text-right text-small v-center' %></div>
-      </div>
-        <%= render 'forum_threads/newcategory' %>
-    </div>
-</div>
-
-<div class="uk-container uk-container-small">
-  <div class="row mt-3">
+<div class="container mt-3">
+  <div class="row">
     <div class="col">
-    <%= link_to raw('<i class="fa fa-plus"></i>Make a New Post'), new_forum_thread_path,method: :get , class:'btn btn-primary' %>
-      <%# <a href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Make a New Post</a> %>
+      <%= render 'forum_threads/Left' %>
     </div>
-    <div>
-      <form class="uk-search uk-search-default">
-        <a class="uk-search-icon-flip" uk-search-icon></a>
-        <input class="uk-search-input" type="search" placeholder="Search...">
-      </form>
+    <div class="col-md-6">
+      <%= render 'forum_threads/Middle' %>
+    </div>
+    <div class="col">
+      <%= render 'forum_threads/Right' %>
     </div>
   </div>
 </div>
+<%# <%= render 'forum_threads/card' , forum_thread: @forum_threads %>
 
-<%= render 'forum_threads/card' , forum_thread: @forum_threads %>
-
-<%= render 'forum_threads/footer' %>
+<%# <%= render 'forum_threads/footer' %>

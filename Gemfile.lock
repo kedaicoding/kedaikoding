@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/nicbet/rails-uikit.git
+  revision: 395e860901d67ffd832945a4edb6a60edc2d0304
+  specs:
+    rails-uikit (3.0.0.beta.40)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -217,8 +223,6 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.19)
       execjs (>= 0.3.0, < 3)
-    uikit-rails (1.0.1)
-      sass (>= 3.3.4)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.7.0)
@@ -254,6 +258,7 @@ DEPENDENCIES
   puma (~> 3.11)
   pundit
   rails (~> 5.2.1)
+  rails-uikit!
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_form
@@ -263,11 +268,10 @@ DEPENDENCIES
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
-  uikit-rails
   web-console (>= 3.3.0)
 
 RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
