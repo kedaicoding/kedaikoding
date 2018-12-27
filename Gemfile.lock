@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/nicbet/rails-uikit.git
+  revision: 395e860901d67ffd832945a4edb6a60edc2d0304
+  specs:
+    rails-uikit (3.0.0.beta.40)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -252,6 +258,7 @@ DEPENDENCIES
   puma (~> 3.11)
   pundit
   rails (~> 5.2.1)
+  rails-uikit!
   sass-rails (~> 5.0)
   selenium-webdriver
   simple_form
@@ -267,4 +274,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.17.1
+   1.17.2

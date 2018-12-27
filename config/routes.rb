@@ -1,14 +1,9 @@
 Rails.application.routes.draw do
-  get 'tags/new'
-  get 'tags/create'
-  get 'tags/show'
-  get 'tags/update'
-  get 'tags/destroy'
-  get 'categories/index'
+
   devise_for :admins
   devise_for :users
 
-  resources :users, only: [:show]
+  resources :users
   root to: 'landing_pages#index'
   get 'tags/:tag', to: 'forum_threads#index', as: :tag
 

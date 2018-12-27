@@ -14,12 +14,12 @@
 
 //= require jquery3
 //= require jquery
-//  require jquery_ujs
+//= require jquery_ujs
 //= require chosen-jquery
 //= require scaffold
-//= require popper
 //= require bootstrap
-//= require uikit
+//= require popper
+//= require "uikit"
 //= require uikit-icons
 //= require summernote/summernote-bs4.min
 //= require summernote-init
